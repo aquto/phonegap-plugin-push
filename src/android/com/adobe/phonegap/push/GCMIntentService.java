@@ -82,6 +82,7 @@ public class GCMIntentService extends GcmListenerService implements PushConstant
             else {
                 Log.d(LOG_TAG, "background");
                 extras.putBoolean(FOREGROUND, false);
+                extras.putString("title", getAppName(this));
 
                 showNotificationIfPossible(getApplicationContext(), extras);
             }
